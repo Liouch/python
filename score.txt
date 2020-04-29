@@ -1,1 +1,1 @@
-[{"attempts": 6, "date": "2020-04-27 16:53:33.182682", "name": "Liou", "wrong_guesses": [15, 25, 20, 22, 23]}]
+[{"attempts": 4, "date": "2020-04-29 15:06:38.159503", "name": "a", "wrong_guesses": [15, 25, 20], "secret_number": 22}, {"attempts": 5, "date": "2020-04-29 15:07:17.165328", "name": "b", "wrong_guesses": [15, 25, 20, 22], "secret_number": 21}, {"attempts": 7, "date": "2020-04-29 15:07:38.116306", "name": "c", "wrong_guesses": [15, 25, 26, 27, 28, 29], "secret_number": 30}]
