@@ -1,6 +1,7 @@
 import random
 import json
 import datetime
+import operator
 
 name = input("What's your name player?: ")
 
@@ -9,20 +10,18 @@ attempts = 0
 
 with open("score.txt", "r") as score_file:
     score_list = json.loads(score_file.read())
-    print("Top scores: " +str(score_list))
 
 new_score_list = sorted(score_list, key=lambda k: k['attempts'])[:3]
 for score_dict in new_score_list:
+   score_text = "Player {0} had {1} attempts on {2}. The secret number was {3}. The wrong guesses were: {4}".format(
+           score_dict.get("name"),
+           (score_dict.get("attempts")),
+           score_dict.get("date"),
+           score_dict.get("secret"),
+           score_dict.get("wrong_guesses"))
 
-    for score_dict in new_score_list:
-        score_text = "Player {0} had {1} attempts on {2}. The secret number was {3}. The wrong guesses were: {4}".format(
-            score_dict.get("name"),
-            (score_dict.get("attempts")),
-            score_dict.get("date"),
-            score_dict.get("secret"),
-            score_dict.get("wrong_guesses"))
+   print(score_text)
 
-    print(score_text)
 
 wrong_guesses = []
 while True:
