@@ -46,24 +46,25 @@ def new_player():
         points = input("Points of the player: ")
         assists = input("Assists of the player: ")
         rebounds = input("Rebounds of the player: ")
-        new_player = first_name #esto no se si realmente está bien
         new_player = BasketballPlayer(first_name=first_name, last_name=last_name, height_cm=height_cm, weight_kg=weight_kg, points=points, rebounds=rebounds, assists=assists)
 
     elif type_of_player == "football":
         goals = input("goals of the player: ")
         yellow_cards = input("yellow cards of the player: ")
         red_cards = input("red cards of the player: ")
-        new_player = first_name #esto no se si realmente está bien
         new_player = FootballPlayer(first_name=first_name, last_name=last_name, height_cm=height_cm, weight_kg=weight_kg, goals=goals, yellow_cards=yellow_cards, red_cards=red_cards)
     else:
         print("algo fue mal")
 
-    players_list.append(new_player.__dict__)
+    players_list.append(new_player)
     with open("players.txt", "w") as players_file:
-        players_file.write(json.dumps(players_list))
+        for players in players_list:
+            players_file.write(json.dumps(players.__dict__))
     print(players_list)
 
 new_player()
+if __name__ == "__main__":
+    new_player()
 
 
 
